@@ -5,6 +5,7 @@ const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const config = {
   output: 'export',
+  images: { unoptimized: true },
   // GitHub Pages 部署需要 basePath（项目页为 /repo-name）
   ...(process.env.GITHUB_REPOSITORY && {
     basePath: `/${process.env.GITHUB_REPOSITORY.split('/')[1]}`,

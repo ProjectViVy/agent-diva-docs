@@ -58,6 +58,8 @@ jobs:
         run: pnpm run types:check
 
       - name: Build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
         run: pnpm run build
 
       - name: Upload artifact

@@ -43,7 +43,7 @@ export default function HomePage() {
             <div className="relative flex min-h-[200px] flex-1 items-center justify-end sm:min-h-[280px] lg:min-h-[340px]">
               <div className="absolute -right-2 top-1/2 z-10 -translate-y-1/2 sm:-right-6 lg:-right-10">
                 <Image
-                  src="/diva.png"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/diva.png`}
                   alt="Agent Diva"
                   width={512}
                   height={512}
