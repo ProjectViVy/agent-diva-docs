@@ -1,0 +1,15 @@
+{
+  "title": "通道",
+  "pages": [
+    "index",
+    "telegram",
+    "discord",
+    "slack",
+    "email",
+    "whatsapp",
+    "feishu",
+    "dingtalk",
+    "qq",
+    "matrix"
+  ]
+}

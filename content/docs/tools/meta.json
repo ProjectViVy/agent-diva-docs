@@ -1,0 +1,11 @@
+{
+  "title": "工具",
+  "pages": [
+    "index",
+    "filesystem",
+    "shell",
+    "web",
+    "mcp",
+    "cron"
+  ]
+}

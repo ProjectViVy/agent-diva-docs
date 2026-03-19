@@ -1,0 +1,28 @@
+{
+  "title": "Agent Diva 文档",
+  "pages": [
+    "index",
+    "overview",
+    "---",
+    "start/getting-started",
+    "start/onboarding",
+    "install",
+    "---",
+    "channels/index",
+    "providers/index",
+    "---",
+    "tools/index",
+    "---",
+    "cli/index",
+    "guides/development",
+    "concepts/architecture",
+    "ui/index",
+    "labs/index",
+    "---",
+    "reference/configuration",
+    "---",
+    "help/faq",
+    "help/environment",
+    "help/troubleshooting"
+  ]
+}

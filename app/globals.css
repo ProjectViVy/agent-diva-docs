@@ -1,0 +1,289 @@
+@import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+
+/* Agent Diva 自定义主题：覆盖 Fumadocs 默认色，保持原有美观风格 */
+:root {
+  --color-fd-background: hsl(40 40% 98%);
+  --color-fd-foreground: hsl(222 30% 18%);
+  --color-fd-muted: hsl(40 40% 99%);
+  --color-fd-muted-foreground: hsl(222 15% 45%);
+  --color-fd-popover: hsl(0 0% 100%);
+  --color-fd-popover-foreground: hsl(222 40% 12%);
+  --color-fd-card: hsl(0 0% 100%);
+  --color-fd-card-foreground: hsl(222 30% 18%);
+  --color-fd-border: hsl(222 25% 35%);
+  --color-fd-primary: hsl(340 82% 72%);
+  --color-fd-primary-foreground: hsl(330 10% 12%);
+  --color-fd-secondary: hsl(210 40% 96%);
+  --color-fd-secondary-foreground: hsl(222 40% 12%);
+  --color-fd-accent: hsla(340 82% 72% / 30%);
+  --color-fd-accent-foreground: hsl(330 10% 12%);
+  --color-fd-ring: hsl(340 82% 65%);
+  --color-fd-overlay: hsla(240 20% 20% / 0.2);
+}
+
+.dark {
+  --color-fd-background: hsl(240 20% 8%);
+  --color-fd-foreground: hsl(0 0% 96%);
+  --color-fd-muted: hsl(240 18% 16%);
+  --color-fd-muted-foreground: hsl(240 10% 70%);
+  --color-fd-popover: hsl(240 21% 12%);
+  --color-fd-popover-foreground: hsl(0 0% 96%);
+  --color-fd-card: hsl(240 19% 14%);
+  --color-fd-card-foreground: hsl(0 0% 96%);
+  --color-fd-border: hsl(0 0% 100%);
+  --color-fd-primary: hsl(330 82% 72%);
+  --color-fd-primary-foreground: hsl(260 10% 10%);
+  --color-fd-secondary: hsl(240 20% 16%);
+  --color-fd-secondary-foreground: hsl(0 0% 92%);
+  --color-fd-accent: hsla(330 82% 72% / 30%);
+  --color-fd-accent-foreground: hsl(0 0% 90%);
+  --color-fd-ring: hsl(330 82% 65%);
+  --color-fd-overlay: hsla(0 0% 0% / 0.2);
+}
+
+/* 1. 主题变量：亮色模式（放在 base 层，保证优先级和继承正常） */
+@layer base {
+  :root {
+  --color-page: hsl(40 40% 98%);
+  --color-header: hsl(0 0% 100%);
+  --color-footer: hsl(40 40% 97%);
+  --color-surface: hsl(0 0% 100%);
+  --color-surface-soft: hsl(40 40% 99%);
+  --color-border: hsl(222 25% 35%);
+  --color-fg: hsl(222 30% 18%);
+  --color-fg-strong: hsl(222 40% 12%);
+  --color-fg-muted: hsl(222 15% 45%);
+
+  --color-accent: hsl(340 82% 72%);
+  --color-accent-strong: hsl(340 82% 65%);
+  --color-accent-fg: hsl(330 10% 12%);
+  --color-accent-soft: hsl(340 90% 95%);
+  --color-border-accent: hsl(340 82% 65%);
+
+  --color-chip: hsl(210 40% 96%);
+
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --shadow-soft: 0 12px 30px hsla(240, 20%, 20%, 0.06);
+  }
+
+  /* 2. 暗色模式 */
+  html.dark {
+  --color-page: hsl(240 20% 8%);
+  --color-header: hsl(240 21% 12%);
+  --color-footer: hsl(240 21% 10%);
+  --color-surface: hsl(240 19% 14%);
+  --color-surface-soft: hsl(240 18% 16%);
+  --color-border: hsl(0 0% 100%);
+  --color-fg: hsl(0 0% 96%);
+  --color-fg-strong: hsl(0 0% 100%);
+  --color-fg-muted: hsl(240 10% 70%);
+
+  --color-accent: hsl(330 82% 72%);
+  --color-accent-strong: hsl(330 82% 65%);
+  --color-accent-fg: hsl(260 10% 10%);
+  --color-border-accent: hsl(0 0% 100%);
+  --color-accent-soft: hsl(330 60% 20%);
+
+  --color-chip: hsl(240 25% 20%);
+
+  --shadow-soft: 0 18px 40px hsla(240, 70%, 5%, 0.45);
+  }
+
+  /* 3. 基础元素与排版 */
+  *,
+  *::before,
+  *::after {
+  box-sizing: border-box;
+  }
+
+  html,
+  body {
+  margin: 0;
+  padding: 0;
+  }
+
+  body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text',
+    'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background-color: var(--color-page);
+  color: var(--color-fg);
+  }
+}
+@layer utilities {
+
+/* 4. 简单的工具类，供 TSX 使用 */
+.bg-page {
+  background-color: var(--color-page);
+}
+
+.bg-header {
+  background-color: var(--color-header);
+}
+
+.bg-footer {
+  background-color: var(--color-footer);
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+.bg-surface-soft {
+  background-color: var(--color-surface-soft);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+.bg-accent-soft {
+  background-color: var(--color-accent-soft);
+}
+
+.bg-chip {
+  background-color: var(--color-chip);
+}
+
+.text-fg {
+  color: var(--color-fg);
+}
+
+.text-fg-strong {
+  color: var(--color-fg-strong);
+}
+
+.text-fg-muted {
+  color: var(--color-fg-muted);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-accent-strong {
+  color: var(--color-accent-strong);
+}
+
+.text-accent-fg {
+  color: var(--color-accent-fg);
+}
+
+.border-border {
+  border-color: var(--color-border);
+}
+
+.border-accent-strong {
+  border-color: var(--color-accent-strong);
+}
+
+.border-accent {
+  border-color: var(--color-border-accent);
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+/* 5. 文档内容排版 */
+.docs-content {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.docs-content h1,
+.docs-content h2,
+.docs-content h3,
+.docs-content h4 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-fg-strong);
+}
+
+.docs-content h1 {
+  font-size: 1.9rem;
+}
+
+.docs-content h2 {
+  font-size: 1.4rem;
+}
+
+.docs-content h3 {
+  font-size: 1.15rem;
+}
+
+.docs-content p {
+  margin: 0.6rem 0;
+  line-height: 1.7;
+  color: var(--color-fg);
+}
+
+.docs-content ul,
+.docs-content ol {
+  margin: 0.6rem 0 0.6rem 1.4rem;
+  padding: 0;
+}
+
+.docs-content li + li {
+  margin-top: 0.3rem;
+}
+
+.docs-content code {
+  padding: 0.1em 0.4em;
+  border-radius: 999px;
+  background-color: var(--color-surface-soft);
+  font-size: 0.9em;
+}
+
+.docs-content pre {
+  margin: 1rem 0;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-xl);
+  background: radial-gradient(
+      circle at top left,
+      hsla(340, 82%, 72%, 0.12),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      hsla(220, 80%, 70%, 0.12),
+      transparent 55%
+    ),
+    hsl(240 16% 14%);
+  color: #f5f5f7;
+  font-size: 0.85rem;
+  overflow-x: auto;
+}
+
+.docs-callout {
+  margin: 1rem 0;
+  padding: 0.8rem 0.9rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid hsla(340, 82%, 72%, 0.4);
+  background: linear-gradient(
+    135deg,
+    hsla(340, 82%, 90%, 0.7),
+    hsla(220, 90%, 96%, 0.8)
+  );
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  font-size: 0.9rem;
+}
+
+.docs-callout-icon {
+  font-size: 1.1rem;
+  margin-top: 0.1rem;
+}
+
+.docs-callout-body strong {
+  color: var(--color-fg-strong);
+}
+
+}
+
