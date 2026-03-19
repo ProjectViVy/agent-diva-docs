@@ -1,45 +1,61 @@
-# agent-diva-docs
+# Agent Diva 文档 / Agent Diva Docs
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+[Agent Diva](https://github.com/ProjectViVy/agent-diva) 的官方文档站点，基于 [Fumadocs](https://fumadocs.dev) 与 Next.js 构建。
 
-Run development server:
+The official documentation site for [Agent Diva](https://github.com/ProjectViVy/agent-diva), built with [Fumadocs](https://fumadocs.dev) and Next.js.
+
+---
+
+## 快速开始 / Quick Start
 
 ```bash
-npm run dev
-# or
+# 安装依赖 / Install dependencies
+pnpm install
+
+# 启动开发服务器 / Start dev server
 pnpm dev
-# or
-yarn dev
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+在浏览器中打开 http://localhost:3000 查看文档。  
+Open http://localhost:3000 in your browser to view the docs.
 
-## Explore
+---
 
-In the project, you can see:
+## 构建与部署 / Build & Deploy
 
-- `lib/source.ts`: Code for content source adapter, [`loader()`](https://fumadocs.dev/docs/headless/source-api) provides the interface to access your content.
-- `lib/layout.shared.tsx`: Shared options for layouts, optional but preferred to keep.
+```bash
+# 生产构建 / Production build
+pnpm build
 
-| Route                     | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| `app/(home)`              | The route group for your landing page and other pages. |
-| `app/docs`                | The documentation layout and pages.                    |
-| `app/api/search/route.ts` | The Route Handler for search.                          |
+# 启动生产服务 / Start production server
+pnpm start
+```
 
-### Fumadocs MDX
+---
 
-A `source.config.ts` config file has been included, you can customise different options like frontmatter schema.
+## 项目结构 / Project Structure
 
-Read the [Introduction](https://fumadocs.dev/docs/mdx) for further details.
+| 路径 Path | 说明 Description |
+|-----------|------------------|
+| `content/docs/` | 文档 Markdown / MDX 源文件 · Doc source files |
+| `app/docs/` | 文档页面路由 · Docs routes |
+| `app/(home)/` | 首页与落地页 · Home & landing |
+| `app/api/search/` | 全文搜索 API · Full-text search API |
+| `app/api/chat/` | AI 对话 API · AI chat API |
+| `lib/` | 内容源、布局等共享逻辑 · Shared logic |
+| `components/` | UI 组件 · UI components |
 
-## Learn More
+---
 
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
+## 技术栈 / Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.dev) - learn about Fumadocs
+- **框架 Framework**：Next.js 16
+- **文档 Docs**：Fumadocs（MDX、搜索、AI 对话 · MDX, search, AI chat）
+- **样式 Styling**：Tailwind CSS
+
+---
+
+## 相关链接 / Links
+
+- [Agent Diva 主仓库 / Main Repo](https://github.com/ProjectViVy/agent-diva) — Rust 多通道 AI 助手网关 · Rust multi-channel AI assistant gateway
+- [Fumadocs 文档 / Fumadocs Docs](https://fumadocs.dev) — 文档框架说明 · Documentation framework
